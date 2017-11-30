@@ -1,0 +1,204 @@
+<div class="jumbotron ">
+	<div class="container">
+		<div role="warning" class="alert alert-info">
+			<h5 class="text-center">云池是使用PROP模式稳定，高效的以太坊矿池，推广期间免收手续费.</h5>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">矿池算力</h3>
+					</div>
+					<div class="panel-body">
+						<h4>{{format-hashrate stats.model.hashrate}}</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title">在线矿工</h3>
+					</div>
+					<div class="panel-body">
+						<h4>{{format-number stats.model.minersTotal}}</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">矿池费用</h3>
+					</div>
+					<div class="panel-body">
+						<h4>1%</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">全网难度</h3>
+					</div>
+					<div class="panel-body">
+						<h4>{{with-metric-prefix stats.difficulty}}</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-danger">
+					<div class="panel-heading">
+						<h3 class="panel-title">全网算力</h3>
+					</div>
+					<div class="panel-body">
+						<h4>{{format-hashrate stats.hashrate}}</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 text-center">
+				<div style="height: 130px" class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">区块高度</h3>
+					</div>
+					<div class="panel-body">
+						<h4>{{format-number stats.height}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr/>
+<div class="container">
+  <div class="stats">
+    <h4>矿机状态 &amp; 支付记录</h4>
+    <div class="input-group">
+      {{input value=cachedLogin class="form-control" placeholder="输入你的以太坊地址"}}
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" {{action 'lookup' cachedLogin}}>
+          <span style="display: inline;"><i class="fa fa-search"></i> 查询</span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="container">
+<div class="well">
+	<h3>如何链接矿池</h3>
+	<hr>
+	<h4>1. 选择矿池服务器和端口:</h4>
+	<div class="table-responsive">
+		<table class="table table-condensed table-bordered">
+		<tbody>
+		<tr class="text-center">
+			<th class="text-right">
+				Server
+			</th>
+			<td>
+				eth.3pool.cn
+			</td>
+		</tr>
+		<tr class="text-center">
+			<th class="text-right">
+				Stratum Port
+			</th>
+			<td colspan="4">
+				9999
+			</td>
+		</tr>
+		<tr class="text-center">
+			<th class="text-right">
+				Http Port
+			</th>
+			<td colspan="4">
+				9009
+			</td>
+		</tr>
+		<tr class="text-center">
+			<th class="text-right">
+				Username
+			</th>
+			<td colspan="4">
+				你的以太坊钱包地址,例如:0xb85150eb365e7df0941f0cf08235f987ba91506a
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<h4>2. 选择你的挖矿软件: </h4>
+	<ul role="tablist" class="nav nav-tabs">
+		<li role="presentation" class="active"><a href="#Claymore" aria-controls="Claymore" role="tab" data-toggle="tab">Claymore</a></li>
+		<li role="presentation"><a href="#Ethminer" aria-controls="Ethminer" role="tab" data-toggle="tab">Ethminer</a></li>
+		<li role="presentation"><a href="#EthProxy" aria-controls="EthProxy" role="tab" data-toggle="tab">Eth Proxy</a></li>
+	</ul>
+	<div class="tab-content">
+		<div role="tabpanel" id="Claymore" class="tab-pane active">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h5>下载,配置和运行Claymore miner</h5>
+					<ul>
+						<li>下载和配置教程: <a href="https://github.com/nanopool/Claymore-Dual-Miner" target="_blank" rel="nofollow">Github</a></li>
+					</ul>
+					<h5>使用以下命令启动挖矿,将你的以太坊钱包地址做为用户名</h5>
+					<pre>ethdcrminer64.exe -epool eth.3pool.cn:9999 -ewal 以太坊钱包地址 -epsw 密码 -eworker 矿工名</pre>
+					<h5>完整命令实例</h5>
+					<pre>ethdcrminer64.exe -epool eth.3pool.cn:9999 -ewal 0xb85150eb365e7df0941f0cf08235f987ba91506a -epsw x -eworker rig-1</pre>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" id="Ethminer" class="tab-pane">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h5>下载,配置和运行Ethminer</h5>
+					<ul>
+						<li>下载和配置教程: <a href="https://github.com/ethereum-mining/ethminer/releases" target="_blank" rel="nofollow">Github</a></li>
+					</ul>
+					<h5>使用以下命令启动挖矿,将你的以太坊钱包地址做为用户名</h5>
+					<pre>setx GPU_FORCE_64BIT_PTR 0
+setx GPU_MAX_HEAP_SIZE 100
+setx GPU_USE_SYNC_OBJECTS 1
+setx GPU_MAX_ALLOC_PERCENT 100
+setx GPU_SINGLE_ALLOC_PERCENT 100
+ethminer.exe --farm-recheck 200 -G -S eth.3pool.cn:9999 -O 以太坊钱包地址.矿工名</pre>
+					<h5>完整命令实例</h5>
+					<pre>setx GPU_FORCE_64BIT_PTR 0
+setx GPU_MAX_HEAP_SIZE 100
+setx GPU_USE_SYNC_OBJECTS 1
+setx GPU_MAX_ALLOC_PERCENT 100
+setx GPU_SINGLE_ALLOC_PERCENT 100
+ethminer.exe --farm-recheck 200 -G -S eth.3pool.cn:9999 -O 0xb85150eb365e7df0941f0cf08235f987ba91506a.rig-1</pre>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" id="EthProxy" class="tab-pane">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h5>下载,配置和运行Eth Proxy</h5>
+					<ul>
+						<li>下载和配置教程: <a href="https://github.com/Atrides/eth-proxy" target="_blank" rel="nofollow">Github</a></li>
+					</ul>
+					<h5>修改eth-proxy.conf配置文件内容,将你的以太坊钱包地址做为用户名</h5>
+					<h5>完整命令实例</h5>
+					<pre>COIN = "ETH"
+HOST = "127.0.0.1"
+PORT = 8080
+# 将下面的地址改成你的钱包地址,用来接受挖到的币
+WALLET = "0xb85150eb365e7df0941f0cf08235f987ba91506a"
+# 给矿机设置编号
+ENABLE_WORKER_ID = True 
+# 主矿池
+POOL_HOST = "eth.3pool.cn"
+POOL_PORT = 9999
+# 备用矿池
+POOL_FAILOVER_ENABLE = True
+POOL_HOST_FAILOVER1 = "eth.3pool.cn"
+POOL_PORT_FAILOVER1 = 9009
+LOG_TO_FILE = True
+DEBUG = False</pre>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

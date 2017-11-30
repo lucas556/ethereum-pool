@@ -1,0 +1,195 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+	margin-bottom: 60px;
+	background: #f3f3f3;
+	font-family: "microsoft yahei";
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
+	background: #fff;
+	border-bottom: 1px solid rgba(30,35,42,.06);
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body {
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+body > .container {
+	padding: 0px 15px 0;
+}
+
+.container .text-muted {
+	margin: 20px 0;
+}
+
+footer > .container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+footer > .container p {
+	margin: 0;
+}
+
+.jumbotron {
+	margin: 0;
+	padding: 40px 0 15px 0;
+	margin-bottom: 15px;
+	background-color: transparent;
+}
+
+.navbar-default {
+	background: #fff;
+	border-color: rgba(30,35,42,.06);
+}
+
+.navbar-default .navbar-nav {
+	float: right;
+	font-size: 15px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #666;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+	color: #0F88EB;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	color: #0F88EB;
+	background-color: transparent;
+}
+
+.well .nav-tabs {
+	border-bottom: transparent;
+}
+
+.col-xs-3 ul {
+	width: 140px;
+	margin-top: 20px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	box-shadow: 0 1px 4px rgba(0,0,0,.067)
+}
+
+.col-xs-3 ul li {
+	margin: 0;
+	border-top: 1px solid #ddd
+}
+
+.col-xs-3 ul li:first-child {
+	border-top: none
+}
+
+.col-xs-3 ul li a {
+	margin: 0;
+	padding: 8px 1pc;
+	border-radius: 0
+}
+
+.col-xs-3 ul li.active a,.col-xs-3 ul li.active a:hover {
+	color: #fff;
+	background: #08c;
+	border: 1px solid #08c
+}
+
+.col-xs-3 ul li:first-child a {
+	border-radius: 4px 4px 0 0
+}
+
+.col-xs-3 ul li:last-child a {
+	border-radius: 0 0 4px 4px
+}
+
+.col-xs-3 ul.affix {
+	top: 30px
+}
+
+.panel-body p {
+	font-size: 16px;
+}
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-nav {
+		float: left;
+	}
+
+	.table-responsive .text-center {
+		text-align: left;
+	}
+}
+
+span.logo {
+	color: #0F88EB;
+	font-size: 23px;
+}
+
+.note {
+	margin: 0 0 20px 0;
+	padding: 15px 30px 15px 15px;
+	border-left: 5px solid #eee;
+	border-radius: 5px;
+}
+
+.note-info {
+	background-color: #E8F6FC;
+	border-color: #57b5e3;
+}
+
+.note-danger {
+	background-color: #ff9999;
+	border-color: #ff0000;
+}
+
+h4.note {
+	margin-top: 0;
+	font-weight: 300 !important;
+}
+
+.hash {
+	font-family: 'Inconsolata', monospace;
+}
+
+/* Stats */
+.stats {
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.stats:last-child {
+	width: auto;
+}
+
+.stats > h3 > i {
+	width: 21px;
+}
+
+.stats > div {
+	padding: 5px 0;
+}
+
+.stats > div > .fa {
+	width: 25px;
+}
+
+.stats > div > span:first-of-type {
+	font-weight: bold;
+}

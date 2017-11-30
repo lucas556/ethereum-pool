@@ -1,0 +1,22 @@
+{{#if model.matured}}
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>区块高度</th>
+        <th>Block Hash</th>
+        <th>时间</th>
+        <th>幸运值</th>
+        <th>收益</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.matured as |block|}}
+        {{partial "blocks/block"}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+<h3>还没有成熟的区块产生.</h3>
+{{/if}}

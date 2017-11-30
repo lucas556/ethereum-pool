@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>区块数</th>
+        <th>Shares/Diff</th>
+        <th>叔块率</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each-in model.luck as |total row|}}
+    <tr>
+      <td>{{total}}</td>
+      <td>{{format-number row.luck style='percent'}}</td>
+      <td>{{format-number row.uncleRate style='percent'}}</td>
+    </tr>
+    {{/each-in}}
+    </tbody>
+  </table>
+</div>

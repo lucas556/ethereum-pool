@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="page-header">
+    <h1>帮助</h1>
+  </div>
+  <div class="row">
+	<div class="col-xs-3">
+		<ul role="tablist" class="nav nav-stacked" data-spy="affix" data-offset-top="125">
+			<li role="presentation" class="active"><a href="#section-1" aria-controls="section-1" role="tab" data-toggle="tab">挖矿问题</a></li>
+			<li role="presentation"><a href="#pay" aria-controls="pay" role="tab" data-toggle="tab">支付说明</a></li>
+			<li role="presentation"><a href="#section-3" aria-controls="section-3" role="tab" data-toggle="tab">常见问题</a></li>
+		</ul>
+	</div>
+	<div class="col-xs-9">
+		<div class="tab-content">
+			<div role="tabpanel" id="section-1" class="tab-pane active">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Q: 以太坊挖矿用什么矿机?</h3>
+				        <p>A: 与比特币的ASIC矿机不同,以太坊使用显卡矿机挖矿.</p>
+						<h3>Q: 以太坊矿机如何配置?</h3>
+				        <p>A: 以太坊挖矿主要是使用显卡来挖矿,需要使用一台电脑来运行挖矿程序,主要硬件包含:显卡、主板、电源、CPU、内存、硬盘（SSD）、延长线、转接线等.其中显卡决定了挖矿的速度,主板、电源很大程度上决定矿机运行的稳定程度.</p>
+						<p>主板建议:显卡挖矿不需要很大的 PCIE 带宽.主板上具备 PCI-E 1X 即可满足带宽要求.一般主板上具有3-5个PCI-E 1X 接口，1个PCI-E 16X接口,此外主板上具有大4PIN供电接口对稳定性有一定的提升.PCI-E1X需要淘宝购买1X转16X延长线.操作系统使用Windows 10 1703版最佳,建议使用官方原版.</p>
+						<p>显卡建议:目前推荐使用AMD RX580/480/470/570;英伟达GTX1060/1070进行挖矿,建议显存4G以上.</p>
+						<h3>Q: 可以使用CPU挖以太坊吗?</h3>
+				        <p>A: 在以太坊发行初期,可以使用CPU进行挖矿,但由于网络持续增加,目前使用CPU挖矿已经被淘汰了.</p>
+						<h3>Q: 以太坊挖矿软件有哪些?</h3>
+				        <p>A: 以太坊挖矿软件主要有Claymore,Ethminer等,国内有根据Claymore二次开发的长沙矿工,圣骑士等.其中Claymore原作者会扣取1%的算力,国内二次开发的软件也会扣取一定的算力.Ethminer原版不扣取算力.</p>
+						<p>A: 与比特币的ASIC矿机不同,以太坊使用显卡矿机挖矿.</p>
+						<h3>Q: 为什么你们没有备用矿池?</h3>
+						<p>A: 云池使用负载均衡技术,后台部署服务器群组,自动分配状态最佳的服务器给矿工,当其中一台服务器出现错误,会自动进行服务器切换,所以不需要备用矿池.</p>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" id="pay" class="tab-pane">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Q.矿池分配模式是什么?</h3>
+                        <p>A.云池使用PROP模式向矿工支付收益,即proportional,每一轮结算一次,SHARE值一次性分完.</p>
+						<h3>Q: 什么时间向矿工支付收益?最低支付额是多少?</h3>
+				        <p style="font-size:16px;">A: 云池每12小时支付一次收益,起付标准为0.06 ETH.如果您在12小时内达到0.06 ETH,我们将向您的账户支付全部收益.</p>
+						<h3>Q: 挖矿费率是多少?</h3>
+				        <p style="font-size:16px;">A: 云池手续费为1%,目前在推广期间,暂免所有手续费.</p>
+						<h3>Q: 叔块奖励和交易费支付给矿工吗?</h3>
+				        <p style="font-size:16px;">A: 云池向矿工支付所有挖矿收益,其中包括普通区块奖励(5 ETH);交易费以及叔块奖励.我们收取固定的费率1%,用于系统开发维护费用.</p>
+						<h3>Q: 矿池收益怎么计算?</h3>
+				        <p style="font-size:16px;">A: 云池的矿工收益为矿池挖到新块且块得到确认后,根据矿工每轮提交的工作量占总工作量的比例减去矿池费率,对所有收益进行分配.</p>
+						<p style="font-size:16px;">计算公式为 : 收益 = ( 5 ETH + 交易费 + 叔块奖励 - 矿池费用 ) * 矿工工作量比例 </p>
+					</div>
+				</div>
+			</div>
+			<div role="tabpanel" id="section-3" class="tab-pane">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3>Q: Share、拒绝率是什么?</h3>
+				        <p style="font-size:16px;">A: Share值是指您的矿机提交给矿池的计算结果数.拒绝率是被矿池拒绝的计算结果占总提交数量的比例.</p>
+						<h3>Q: Stratum Proxy和Http Proxy有什么区别?</h3>
+				        <p style="font-size:16px;">A: Http Proxy使用getwork方式获取任务,并进行挖矿,Stratum Proxy将getwork协议转化为Stratum协议,连接矿池,为局域网矿机提供稳定快速的getwork连接,每个局域网仅需运行一台Stratum Proxy.</p>
+                        <p style="font-size:16px;">通过Stratum Proxy能有效减少丢包和延时,降低拒绝率.</p>
+						<h3>Q: 什么是幸运值?</h3>
+						<p style="font-size:16px;">A: 矿池的幸运值越高,那么在同等算力前提下,矿工的收益要比其它矿池(运气值低的)的矿工收益高.</p>
+						<h3>Q: 什么是叔块?</h3>
+						<p style="font-size:16px;">A: 在以太坊的协议中不认为孤块没有价值,而是会给与发现孤块的矿工以回报.在以太坊中,孤块被称为“叔块”(uncle block),它们可以为主链的安全作出贡献.</p>
+						<p style="font-size:16px;"> 因为以太坊的区块,更容易出现临时分叉和孤块,且较短的区块时间,也使得区块在整个网络中更难以充分传播,尤其是对那些网速慢的矿工,这是一种极大的不公平.为了平衡各方利益,才设计了这样一个叔块机制.叔块在全部挖掘出来的区块中占的比例叫叔块率.</p>
+						<h3>Q: 什么是叔块奖励?</h3>
+						<p style="font-size:16px;">A: 如果普通区块包含了叔块,每包含一个叔块可以得到固定奖励5ETH的1/32,也就是0.15625ETH.叔块的奖励计算有些复杂,公式为: 叔块奖励=(叔块高度+8-包含叔块的区块的高度)*普通区块奖励/8 .</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

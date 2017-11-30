@@ -1,0 +1,9 @@
+<div class="jumbotron">
+	<div class="container">
+  {{#if model.luck}}
+    {{partial "luck"}}
+  {{/if}}
+      {{#link-to 'blocks.index'}}{{/link-to}}
+  {{outlet}}
+	</div>
+</div>
